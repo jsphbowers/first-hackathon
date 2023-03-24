@@ -10,3 +10,10 @@ export const ComplaintSchema = new Schema({
   whinerId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' }
 },
   { timestamps: true, toJSON: { virtuals: true } })
+
+ComplaintSchema.virtual(`whiner`, {
+  localField: "whinerId",
+  ref: "Account",
+  foreignField: "_id",
+  justOne: true
+})
