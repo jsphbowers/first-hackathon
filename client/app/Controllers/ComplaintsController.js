@@ -23,4 +23,12 @@ export class ComplaintsController {
       Pop.error(error.message)
     }
   }
+
+  createComplaint() {
+    try {
+
+    } catch (error) {
+
+    }
+  }
 }
