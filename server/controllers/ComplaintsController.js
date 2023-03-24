@@ -9,10 +9,12 @@ export class ComplaintsController extends BaseController {
     this.router
       .get('/:complaintId', this.getComplaintById)
       .get('', this.getComplaints)
+      // .get('/:whinerId', this.getComplaintByWhinerId)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createComplaint)
       .delete('/:complaintId', this.deleteComplaint)
   }
+
 
   async getComplaints(req, res, next) {
     try {
@@ -33,6 +35,16 @@ export class ComplaintsController extends BaseController {
       next(error)
     }
   }
+
+  // async getComplaintByWhinerId(req, res, next) {
+  //   try {
+  //     const whinerId = req.params.whinerId
+  //     const complaints = await complaintsService.getComplaintByWhinerId(whinerId)
+  //     res.send(complaints)
+  //   } catch (error) {
+  //     next(error)
+  //   }
+  // }
 
   async createComplaint(req, res, next) {
     try {

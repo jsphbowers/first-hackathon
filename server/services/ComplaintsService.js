@@ -4,6 +4,7 @@ import { Forbidden } from "../utils/Errors.js";
 
 class ComplaintsService {
 
+
   async getComplaints(query) {
     const complaints = await dbContext.Complaints.find(query)
     return complaints
@@ -13,6 +14,11 @@ class ComplaintsService {
     const complaint = await dbContext.Complaints.findById(complaintId)
     return complaint
   }
+
+  // async getComplaintByWhinerId(whinerId) {
+  //   const complaints = await dbContext.Complaints.find({ whinerId })
+  //   return complaints
+  // }
 
   async createComplaint(complaintData) {
     const newComplaint = await dbContext.Complaints.create(complaintData)
