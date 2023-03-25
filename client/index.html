@@ -31,8 +31,8 @@
           <h3>Homeowners Outraged Across-America</h3>
         </div>
         <div>
-          <h5>🏠 Home</h5>
-          <h5>🤬 Your Complaints</h5>
+          <h5 class="selectable" onclick="app.complaintsController.drawHome()">🏠 Home</h5>
+          <h5 class="selectable" onclick="app.complaintsController.getMyComplaints()">🤬 Your Complaints</h5>
           <h5>📒 Your Comments</h5>
         </div>
         <div>
@@ -91,8 +91,8 @@
           <div class="modal-body">
             <form onsubmit="app.complaintsController.createComplaint()">
               <img class="post-img" src="placeholder.jpg" alt="" id="img-preview">
-              <input type="url" id="imgUrl" name="imgUrl" oninput="app.complaintsController.previewImage()" value=""
-                placeholder="URL here...">
+              <input class="my-3" type="url" id="imgUrl" name="imgUrl" oninput="app.complaintsController.previewImage()"
+                value="" placeholder="URL here...">
               <br><br>
               <label for="name">Title</label>
               <input class="form-control" name="name" id="name" type="text" placeholder="Enter title...">

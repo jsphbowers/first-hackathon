@@ -3,6 +3,12 @@ import { Complaint } from "../Models/Complaint.js";
 import { server } from "./AxiosService.js";
 
 class ComplaintsService {
+  getMyComplaints(userId) {
+    let complaints = appState.complaints
+    appState.activeComplaints = complaints.filter(c => c.whinerId == userId)
+    console.log(appState.activeComplaints)
+  }
+
   async createComplaint(formData) {
     const res = await server.post('api/complaints', formData)
     console.log(res.data);

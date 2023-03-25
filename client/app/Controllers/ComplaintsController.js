@@ -1,4 +1,6 @@
 import { appState } from "../AppState.js"
+import { Account } from "../Models/Account.js"
+import { Complaint } from "../Models/Complaint.js"
 import { complaintsService } from "../Services/ComplaintsService.js"
 import { getFormData } from "../Utils/FormHandler.js"
 import { Pop } from "../Utils/Pop.js"
@@ -10,10 +12,19 @@ function _drawAllComplaints() {
   complaints.forEach(c => template += c.complaintTemplate)
   setHTML('complaint', template)
 }
+
+function _drawMyComplaints() {
+  let complaints = appState.activeComplaints
+  let template = ''
+  complaints.forEach(c => template += c.complaintTemplate)
+  setHTML('complaint', template)
+}
+
 export class ComplaintsController {
   constructor() {
     this.getComplaints()
     appState.on('complaints', _drawAllComplaints)
+    appState.on('activeComplaints', _drawMyComplaints)
   }
 
   async getComplaints() {
@@ -52,5 +63,15 @@ export class ComplaintsController {
     let imgPreview = document.getElementById("img-preview");
     imgPreview.src = imgInput.value;
     imgInput.value = ``
+  }
+
+  getMyComplaints() {
+    console.log(appState.account.id);
+    const userId = appState.account.id
+    complaintsService.getMyComplaints(userId)
+  }
+
+  drawHome() {
+    _drawAllComplaints()
   }
 }

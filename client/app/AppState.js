@@ -14,8 +14,9 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Complaint').Complaint[]} */
   complaints = []
 
-  /** @type {import('./Models/Account').Profile[]} */
+  /** @type {import('./Models/Complaint').Complaint[]|null} */
 
+  activeComplaints = null
 }
 
 export const appState = new Proxy(new AppState(), {
