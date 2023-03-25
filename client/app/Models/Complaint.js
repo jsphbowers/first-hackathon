@@ -17,12 +17,18 @@ export class Complaint {
   get complaintTemplate() {
     return `
     <div class="row bg-primary my-3 p-3 justify-content-between">
-    <img class="post-img col-6" src="${this.imgUrl}" alt="${this.name}">
-    <div class="col-6">
-      <img class="rounded" src="${this.whiner.picture}" alt="${this.whiner.name}">
-      <p>${this.whiner.name}</p>
-      <p class="bg-primary">${this.description}</p>
+    <img class="post-img col-7" src="${this.imgUrl}" alt="${this.name}">
+    <div class="col-5 ">
+      <div class="d-flex justify-content-end align-items-center">
+      <h4 class="m-0">${this.whiner.name}</h4>
+    <img class="avatar ms-3" src="${this.whiner.picture}" alt="${this.whiner.name}">
     </div>
+    <br>
+    <div class="bg-info min-h rounded p-3">
+    <p class="">${this.location}</p>
+    <p class="">${this.description}</p>
+    </div>
+      </div>
     <div id="comment">
     </div>
     </div>

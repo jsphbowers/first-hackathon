@@ -30,13 +30,15 @@
           <h1>🔥HOA</h1>
           <h3>Homeowners Outraged Across-America</h3>
         </div>
+        <br>
         <div>
-          <h5 class="selectable" onclick="app.complaintsController.drawHome()">🏠 Home</h5>
-          <h5 class="selectable" onclick="app.complaintsController.getMyComplaints()">🤬 Your Complaints</h5>
-          <h5>📒 Your Comments</h5>
+          <h5 class="selectable py-1" onclick="app.complaintsController.drawHome()">🏠 Home</h5>
+          <h5 class="selectable py-1" onclick="app.complaintsController.getMyComplaints()">🤬 Your Complaints</h5>
+          <h5 class="py-1">📒 Your Comments</h5>
         </div>
-        <div>
-          <button data-bs-toggle="modal" data-bs-target="#complaint-modal" class="btn btn-danger">+ Post</button>
+        <br>
+        <div class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#complaint-modal" class="btn btn-danger w-100">Post</button>
         </div>
       </div>
 
