@@ -36,7 +36,7 @@
           <h5>📒 Your Comments</h5>
         </div>
         <div>
-          <button class="btn btn-danger">+ Post</button>
+          <button data-bs-toggle="modal" data-bs-target="#complaint-modal" class="btn btn-danger">+ Post</button>
         </div>
       </div>
 
@@ -48,7 +48,7 @@
           <!-- STUB complaints template -->
           <section class="row bg-primary p-3" id="complaint">
 
-            <img class="post-img" src="https://www.bankrate.com/2019/07/22170007/Common-HOA-rules-violations.jpeg"
+            <!-- <img class="post-img" src="https://www.bankrate.com/2019/07/22170007/Common-HOA-rules-violations.jpeg"
               alt="">
 
             <div class="col-4">
@@ -71,17 +71,49 @@
                   eveniet repudiandae sapiente!</p>
               </div>
 
-            </div>
+            </div> -->
 
           </section>
           <!--  -->
         </div>
       </div>
-
-
-
     </section>
 
+    <!-- SECTION Modal -->
+
+    <div class="modal" id="complaint-modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">File a Complaint!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form onsubmit="app.complaintsController.createComplaint()">
+              <img class="post-img" src="placeholder.jpg" alt="" id="img-preview">
+              <input type="url" id="imgUrl" name="imgUrl" oninput="app.complaintsController.previewImage()" value=""
+                placeholder="URL here...">
+              <br><br>
+              <label for="name">Title</label>
+              <input class="form-control" name="name" id="name" type="text" placeholder="Enter title...">
+              <label for="location">Location</label>
+              <input class="form-control" name="location" id="location" type="text" placeholder="Location...">
+
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Complaint</label>
+                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Complain here..."></textarea>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">File Complaint</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
   </main>
 

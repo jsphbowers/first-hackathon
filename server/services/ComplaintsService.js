@@ -22,7 +22,7 @@ class ComplaintsService {
 
   async createComplaint(complaintData) {
     const newComplaint = await dbContext.Complaints.create(complaintData)
-    await newComplaint.populate(`whiner`, `name picture`)
+    await newComplaint.populate(`whiner`)
     return newComplaint
   }
 

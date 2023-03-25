@@ -10,7 +10,7 @@ export class Complaint {
     this.location = data.location
     this.trending = data.trending
     this.whinerId = data.whinerId
-    this.whiner = data.whiner
+    this.whiner = new Profile(data.whiner)
     this.createdAt = new Date(data.createdAt)
   }
 
@@ -22,6 +22,8 @@ export class Complaint {
       <img class="rounded w-50" src="${this.whiner.picture}" alt="${this.whiner.name}">
       <p>${this.whiner.name}</p>
       <p class="bg-primary">${this.description}</p>
+    </div>
+    <div id="comment">
     </div>
     `
   }
