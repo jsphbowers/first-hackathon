@@ -4,17 +4,27 @@ import { Pop } from "../Utils/Pop.js";
 import { commentsService } from "../Services/CommentsService.js";
 
 // function _drawComments() {
-//   let template = "";
-//   let comments = appState.comments;
-//   comments.forEach((com) => (template += com.commentTemplate));
-//   setHTML("comment", template);
+//   debugger
+//   for (let i = 0; i < appState.complaints.length; i++) {
+//     const complaint = appState.complaints[i];
+//     let template = ""
+//     let commentId = ""
+//     appState.comments.forEach(com => {
+//       commentId = com.complaintId
+//       console.log(`ComplaintID:`, complaint.id, `CommentId:`, commentId);
+//       if (complaint.id == commentId) {
+//         template += com.commentTemplate
+//         setHTML(`comment-${complaint.id}`, template);
+//       }
+//     });
+//   }
 // }
 
 export class CommentsController {
   constructor() {
     console.log("hello from comments");
     // this.getTopComment();
-    // this.getAllComments();
+    this.getAllComments();
     // appState.on("comments", _drawComments);
   }
 
@@ -26,12 +36,12 @@ export class CommentsController {
   //     Pop.error(error.message);
   //   }
   // }
-  // async getAllComments() {
-  //   try {
-  //     await commentsService.getAllComments();
-  //   } catch (error) {
-  //     console.error(error);
-  //     Pop.error(error.message);
-  //   }
-  // }
+  async getAllComments() {
+    try {
+      await commentsService.getAllComments();
+    } catch (error) {
+      console.error(error);
+      Pop.error(error.message);
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { appState } from "../AppState.js"
 import { Profile } from "./Account.js"
 
 
@@ -29,10 +30,18 @@ export class Complaint {
     <p class="">${this.description}</p>
     </div>
       </div>
-    <div id="comment">
+    <div>
+    ${this.CommentsForComplaint}
     </div>
     </div>
     `;
+  }
+
+  get CommentsForComplaint() {
+    let comments = appState.comments.filter(c => c.complaintId == this.id)
+    let template = ""
+    comments.forEach(c => template += c.commentTemplate)
+    return template
   }
 }
 
