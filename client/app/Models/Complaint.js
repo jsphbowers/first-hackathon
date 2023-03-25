@@ -16,15 +16,17 @@ export class Complaint {
 
   get complaintTemplate() {
     return `
-    <img class="post-img" src="${this.imgUrl}" alt="${this.name}">
-
-    <div class="col-4">
-      <img class="rounded w-50" src="${this.whiner.picture}" alt="${this.whiner.name}">
+    <div class="row bg-primary my-3 p-3 justify-content-between">
+    <img class="post-img col-6" src="${this.imgUrl}" alt="${this.name}">
+    <div class="col-6">
+      <img class="rounded" src="${this.whiner.picture}" alt="${this.whiner.name}">
       <p>${this.whiner.name}</p>
       <p class="bg-primary">${this.description}</p>
     </div>
     <div id="comment">
     </div>
-    `
+    </div>
+    `;
   }
 }
+
