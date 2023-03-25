@@ -5,13 +5,13 @@ import { Forbidden } from "../utils/Errors.js";
 class CommentsService {
 
     async getCommentsByComplaintId(query) {
-        const comments = await dbContext.Comments.find(query).populate(`whiner`, `name picture`)
+        const comments = await dbContext.Comments.find(query).populate(`whiner`)
         return comments
     }
 
     async createComment(commentData) {
         const comment = await dbContext.Comments.create(commentData);
-        await comment.populate(`whiner`, `name picture`)
+        await comment.populate(`whiner`)
         return comment
     }
 

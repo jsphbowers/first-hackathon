@@ -6,12 +6,12 @@ class ComplaintsService {
 
 
   async getComplaints(query) {
-    const complaints = await dbContext.Complaints.find(query).populate(`whiner`, `name picture`)
+    const complaints = await dbContext.Complaints.find(query).populate(`whiner`)
     return complaints
   }
 
   async getComplaintById(complaintId) {
-    const complaint = await dbContext.Complaints.findById(complaintId).populate(`whiner`, `name picture`)
+    const complaint = await dbContext.Complaints.findById(complaintId).populate(`whiner`)
     return complaint
   }
 
