@@ -1,13 +1,14 @@
 .post-img {
-  width: 30vw;
-  height: 50vh;
+  width: 37vw;
+  height: 40vh;
   object-fit: cover;
   object-position: center;
 
 }
+
 .avatar {
-  width: 10vh;
-  height: 10vh;
+  width: 8vh;
+  height: 8vh;
   border-radius: 50%;
 }
 
@@ -28,4 +29,8 @@
 
 .hoa-text {
   font-family: 'Fasthand', cursive;
+}
+
+.min-h {
+  min-height: 28vh;
 }
