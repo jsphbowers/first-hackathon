@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>HOA</title>
@@ -20,38 +23,35 @@
 
 <body>
   <!-- <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-     
-    </nav>
   </header> -->
-  <main class="container-fluid bg-secondary" id="app">
+  <main class="container-fluid bg-primary" id="app">
 
     <section class="row">
       <!-- SECTION sidebar -->
-      <div class="col-3 bg-primary sidebar">
+      <div class="col-3 bg-secondary text-light sidebar px-5">
         <div class="text-center">
-          <h1>🔥HOA</h1>
+          <h1 class="d-flex align-items-baseline justify-content-center"><img class="fire" src="https://www.freeiconspng.com/thumbs/fire-blue-png/blue-fire-png-18.png"> HOA</h1>
           <h3 class="hoa-text">Homeowners Outraged Across-America</h3>
         </div>
         <br>
         <div>
-          <h5 class="selectable py-1" onclick="app.complaintsController.drawHome()">🏠 Home</h5>
-          <h5 class="selectable py-1" onclick="app.complaintsController.getMyComplaints()">🤬 Your Complaints</h5>
-          <h5 class="py-1">📒 Your Comments</h5>
+          <h5 class="selectable py-1 d-flex align-items-center" onclick="app.complaintsController.drawHome()"><i class="mdi mdi-home-outline fs-2 text-info"></i>  Home</h5>
+          <h5 class="selectable py-1 d-flex align-items-center" onclick="app.complaintsController.getMyComplaints()"><i class="mdi mdi-emoticon-angry-outline fs-2 text-info" ></i>  Your Complaints</h5>
+          <h5 class="selectable py-1 d-flex align-items-center"><i class="mdi mdi-comment-outline fs-2 text-info"></i>  Your Comments</h5>
         </div>
         <br>
         <div class="text-center">
-          <button data-bs-toggle="modal" data-bs-target="#complaint-modal" class="btn btn-danger w-100">Post</button>
+          <button data-bs-toggle="modal" data-bs-target="#complaint-modal" class="btn btn-success w-100 rounded-5">+ Post</button>
         </div>
       </div>
 
       <!-- SECTION feed -->
 
       <div class="col-8 posts">
-        <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+        <div class="flex-grow-1 justify-content-end align-items-center d-flex mt-2" id="authstate"></div>
         <div>
           <!-- STUB complaints template -->
-          <section id="complaint">
+          <section class="row" id="complaint">
 
             <!-- <img class="post-img" src="https://www.bankrate.com/2019/07/22170007/Common-HOA-rules-violations.jpeg"
               alt="">
@@ -86,19 +86,18 @@
 
     <!-- SECTION Modal -->
 
-    <div class="modal" id="complaint-modal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal " id="complaint-modal" tabindex="-1">
+      <div class="modal-dialog ">
+        <div class="modal-content  ">
           <div class="modal-header">
             <h5 class="modal-title">File a Complaint!</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form onsubmit="app.complaintsController.createComplaint()">
-              <img class="post-img" src="placeholder.jpg" alt="" id="img-preview">
-              <input class="my-3" type="url" id="imgUrl" name="imgUrl" oninput="app.complaintsController.previewImage()"
+              <img class="form-img " src="placeholder.jpg" alt="" id="img-preview">
+              <input class="mt-2 form-control" type="url" id="imgUrl" name="imgUrl" oninput="app.complaintsController.previewImage()"
                 value="" placeholder="URL here...">
-              <br><br>
               <label for="name">Title</label>
               <input class="form-control" name="name" id="name" type="text" placeholder="Enter title...">
               <label for="location">Location</label>
@@ -113,7 +112,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">File Complaint</button>
+            <button type="submit" class="btn btn-success">File Complaint</button>
           </div>
           </form>
         </div>

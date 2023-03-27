@@ -2,6 +2,7 @@ import { appState } from "../AppState.js";
 import { setHTML } from "../Utils/Writer.js";
 import { Pop } from "../Utils/Pop.js";
 import { commentsService } from "../Services/CommentsService.js";
+import { getFormData } from "../Utils/FormHandler.js";
 
 // function _drawComments() {
 //   debugger
@@ -44,4 +45,5 @@ export class CommentsController {
       Pop.error(error.message);
     }
   }
+
 }

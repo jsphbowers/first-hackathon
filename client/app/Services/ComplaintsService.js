@@ -4,23 +4,24 @@ import { server } from "./AxiosService.js";
 
 class ComplaintsService {
   getMyComplaints(userId) {
-    let complaints = appState.complaints
-    appState.activeComplaints = complaints.filter(c => c.whinerId == userId)
-    console.log(appState.activeComplaints)
+    let complaints = appState.complaints;
+    appState.activeComplaints = complaints.filter((c) => c.whinerId == userId);
+    // console.log(appState.activeComplaints);
   }
 
   async createComplaint(formData) {
-    const res = await server.post('api/complaints', formData)
-    console.log(res.data);
-    appState.complaints.push(new Complaint(res.data))
-    appState.emit('complaints')
+    const res = await server.post("api/complaints", formData);
+    // console.log(res.data);
+    appState.complaints.push(new Complaint(res.data));
+    appState.emit("complaints");
   }
   async getComplaints() {
-    const res = await server.get('api/complaints')
-    console.log(res.data);
-    appState.complaints = res.data.map(c => new Complaint(c))
-    console.log(appState.complaints);
+    const res = await server.get("api/complaints");
+    // console.log(res.data);
+    appState.complaints = res.data.map((c) => new Complaint(c));
+    // console.log(appState.complaints);
   }
+
 
 }
 

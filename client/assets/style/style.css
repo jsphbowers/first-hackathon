@@ -1,20 +1,29 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .post-img {
   width: 37vw;
   height: 40vh;
   object-fit: cover;
   object-position: center;
+  padding: 0;
+}
 
+.fire {
+  height: 40px;
+  width: 35px;
 }
 
 .avatar {
-  width: 8vh;
-  height: 8vh;
+  width: 6vh;
+  height: 6vh;
   border-radius: 50%;
 }
 
 .sidebar {
   height: 100%;
-  width: 300px;
+  width: 320px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -24,7 +33,7 @@
 }
 
 .posts {
-  margin-left: 413px;
+  margin-left: 410px;
 }
 
 .hoa-text {
@@ -32,5 +41,26 @@
 }
 
 .min-h {
-  min-height: 28vh;
+  min-height: 30vh;
+}
+
+.form-img {
+  width: 30vw;
+  height: 35vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.comment-text {
+  padding: 0 !important;
+}
+
+.inline-input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.btn-add {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px
 }
